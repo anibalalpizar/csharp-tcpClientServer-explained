@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Client.UI.Mantenimientos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,13 @@ namespace Client.UI
         {
             InitializeComponent();
             lblUsuarioLogueado.Text = nombreCompleto;
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            frmCategoriaPelicula frmCategoriaPelicula = new frmCategoriaPelicula();
+            frmCategoriaPelicula.ShowDialog();
+            this.Hide();
         }
     }
 }

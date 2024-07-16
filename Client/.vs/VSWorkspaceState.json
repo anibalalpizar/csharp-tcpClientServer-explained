@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Client"
+    "\\Client",
+    "\\Client\\UI",
+    "\\Client\\UI\\Mantenimientos"
   ],
   "SelectedNode": "\\Client.sln",
   "PreviewInSolutionExplorer": false

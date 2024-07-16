@@ -1,82 +1,90 @@
-﻿using System;                  // Importa el espacio de nombres para los tipos básicos de .NET, como excepciones y console.
-using System.Collections.Generic; // Importa el espacio de nombres para manejar colecciones genéricas como List<T>.
-using System.Net.Sockets;      // Importa el espacio de nombres para manejar comunicaciones de red a través de sockets.
-using System.Net;             // Importa el espacio de nombres para manejar direcciones IP y otros aspectos relacionados con la red.
-using System.Threading;        // Importa el espacio de nombres para manejar la multitarea y la sincronización, como CancellationToken.
-using System.Threading.Tasks;  // Importa el espacio de nombres para trabajar con tareas asíncronas.
-using Server.Utils;           // Importa el espacio de nombres para utilizar métodos de utilidad relacionados con la base de datos y otras funciones.
+﻿using Server.Utils; // Importa utilidades del servidor, por ejemplo, para la conexión a la base de datos.
+using System; // Importa funcionalidades básicas del sistema.
+using System.Collections.Generic; // Importa funcionalidades para trabajar con colecciones genéricas.
+using System.Net; // Importa funcionalidades para trabajar con redes.
+using System.Net.Sockets; // Importa funcionalidades para trabajar con sockets de red.
+using System.Threading; // Importa funcionalidades para trabajar con hilos y cancelación de tareas.
+using System.Threading.Tasks; // Importa funcionalidades para trabajar con tareas asíncronas.
 
-namespace Server.Server        // Define un espacio de nombres para organizar las clases relacionadas con el servidor.
+namespace Server.Server // Define el espacio de nombres 'Server.Server'.
 {
-    public class Server        // Define una clase pública que gestiona el servidor y las conexiones de los clientes.
+    // Define la clase 'Server' que maneja el servidor TCP.
+    public class Server
     {
-        private TcpListener listener;                   // Instancia para escuchar las conexiones entrantes de clientes TCP.
-        private List<TcpClient> connectedClients = new List<TcpClient>(); // Lista para almacenar los clientes conectados.
-        private CancellationTokenSource cancellationTokenSource; // Fuente de token para cancelar operaciones asíncronas.
+        private TcpListener listener; // Declara un listener TCP para escuchar conexiones entrantes.
+        private List<TcpClient> connectedClients = new List<TcpClient>(); // Lista de clientes TCP conectados.
+        private CancellationTokenSource cancellationTokenSource; // Fuente del token de cancelación para manejar la cancelación de tareas.
+        private ClientHandler clientHandler; // Manejador de clientes para gestionar las conexiones.
 
-        public bool IsRunning { get; private set; } // Propiedad pública que indica si el servidor está en ejecución.
+        public bool IsRunning { get; private set; } // Propiedad para verificar si el servidor está en ejecución.
 
-        public event Action<string> OnUserConnected; // Evento que se activa cuando un usuario se conecta, pasando el nombre del usuario.
+        public event Action<string> OnUserConnected; // Evento para registrar cuando un usuario se conecta.
+        public event Action<string> OnUserAction; // Nuevo evento para registrar acciones del usuario.
 
-        // Método público para iniciar el servidor.
+        // Constructor que inicializa el manejador de clientes.
+        public Server()
+        {
+            clientHandler = new ClientHandler();
+        }
+
+        // Método para iniciar el servidor.
         public void StartServer()
         {
-            IsRunning = true; // Marca el servidor como en ejecución.
-            IPAddress ipAddress = IPAddress.Parse("127.0.0.1"); // Configura la dirección IP del servidor (localhost en este caso).
-            int port = 15500; // Define el puerto en el que el servidor escuchará las conexiones.
+            IsRunning = true;
+            IPAddress ipAddress = IPAddress.Parse("127.0.0.1"); // Dirección IP en la que se ejecuta el servidor.
+            int port = 15500; // Puerto en el que se ejecuta el servidor.
 
-            listener = new TcpListener(ipAddress, port); // Crea una instancia de TcpListener para aceptar conexiones en la IP y puerto especificados.
-            listener.Start(); // Inicia el listener para aceptar conexiones entrantes.
-            Console.WriteLine($"Servidor iniciado en {ipAddress}:{port}"); // Muestra un mensaje en la consola indicando que el servidor está en ejecución.
+            listener = new TcpListener(ipAddress, port); // Inicializa el listener TCP.
+            listener.Start(); // Inicia el listener.
+            Console.WriteLine($"Servidor iniciado en {ipAddress}:{port}");
 
             // Verifica la conexión a la base de datos usando un método de utilidad.
             if (DatabaseUtils.TestDatabaseConnection())
             {
-                Console.WriteLine("Conexion a la base de datos realizada con exito"); // Muestra un mensaje si la conexión a la base de datos es exitosa.
+                Console.WriteLine("Conexion a la base de datos realizada con exito");
             }
             else
             {
-                Console.WriteLine("Error al conectar a la base de datos"); // Muestra un mensaje si la conexión a la base de datos falla.
+                Console.WriteLine("Error al conectar a la base de datos");
                 StopServer(); // Detiene el servidor si no se puede conectar a la base de datos.
-                return; // Sale del método StartServer para evitar seguir ejecutando el código.
+                return;
             }
 
-            // Crea un CancellationTokenSource para cancelar operaciones asíncronas.
-            cancellationTokenSource = new CancellationTokenSource();
-            var cancellationToken = cancellationTokenSource.Token; // Obtiene el token de cancelación asociado.
+            cancellationTokenSource = new CancellationTokenSource(); // Inicializa la fuente del token de cancelación.
+            var cancellationToken = cancellationTokenSource.Token; // Obtiene el token de cancelación.
 
-            // Inicia una tarea asíncrona para aceptar conexiones de clientes.
+            // Ejecuta una tarea para aceptar conexiones de clientes de forma asíncrona.
             Task.Run(() =>
             {
-                while (IsRunning) // Ejecuta el bucle mientras el servidor esté en ejecución.
+                while (IsRunning)
                 {
                     try
                     {
-                        TcpClient client = listener.AcceptTcpClient(); // Acepta una nueva conexión de cliente.
-                        lock (connectedClients) // Bloquea la lista de clientes conectados para evitar problemas de concurrencia.
+                        TcpClient client = listener.AcceptTcpClient(); // Acepta una conexión de cliente.
+                        lock (connectedClients) // Bloquea la lista de clientes conectados para realizar operaciones seguras para hilos.
                         {
-                            connectedClients.Add(client); // Agrega el cliente a la lista de clientes conectados.
+                            connectedClients.Add(client); // Añade el cliente a la lista de clientes conectados.
                         }
-                        // Inicia una tarea para manejar al cliente, pasando el token de cancelación y el evento OnUserConnected.
-                        Task.Run(() => ClientHandler.HandleClient(client, connectedClients, cancellationToken, OnUserConnected), cancellationToken);
+                        // Maneja la conexión del cliente en una nueva tarea.
+                        Task.Run(() => clientHandler.HandleClient(client, connectedClients, cancellationToken, OnUserConnected, OnUserAction), cancellationToken);
                     }
-                    catch (SocketException ex) // Captura excepciones relacionadas con sockets.
+                    catch (SocketException ex) // Captura excepciones de socket.
                     {
-                        if (IsRunning) // Solo muestra el mensaje si el servidor sigue en ejecución.
+                        if (IsRunning)
                         {
-                            Console.WriteLine($"Error: {ex.Message}"); // Muestra el error en la consola.
+                            Console.WriteLine($"Error: {ex.Message}");
                         }
                     }
                 }
-            }, cancellationToken); // Ejecuta la tarea con el token de cancelación.
+            }, cancellationToken);
         }
 
         // Método para verificar si hay clientes conectados antes de detener el servidor.
         public void CheckConnectedClientsBeforeStopping()
         {
-            lock (connectedClients) // Bloquea la lista de clientes conectados para evitar problemas de concurrencia.
+            lock (connectedClients)
             {
-                if (connectedClients.Count > 0) // Si hay clientes conectados.
+                if (connectedClients.Count > 0)
                 {
                     throw new InvalidOperationException($"Hay {connectedClients.Count} usuarios en la aplicación."); // Lanza una excepción si hay clientes conectados.
                 }
@@ -87,21 +95,21 @@ namespace Server.Server        // Define un espacio de nombres para organizar la
             }
         }
 
-        // Método para cerrar todas las conexiones de cliente.
+        // Método para cerrar todas las conexiones de clientes.
         public void CloseAllClientConnections()
         {
-            lock (connectedClients) // Bloquea la lista de clientes conectados para evitar problemas de concurrencia.
+            lock (connectedClients)
             {
-                foreach (var client in connectedClients.ToArray()) // Recorre una copia de la lista de clientes conectados.
+                foreach (var client in connectedClients.ToArray()) // Itera sobre una copia de la lista de clientes conectados.
                 {
                     try
                     {
-                        client.GetStream().Close(); // Cierra el stream del cliente.
+                        client.GetStream().Close(); // Cierra el flujo de red del cliente.
                         client.Close(); // Cierra la conexión del cliente.
                     }
-                    catch (Exception ex) // Captura cualquier excepción al cerrar los clientes.
+                    catch (Exception ex) // Captura cualquier excepción al cerrar el cliente.
                     {
-                        Console.WriteLine($"Error al cerrar cliente: {ex.Message}"); // Muestra el error en la consola.
+                        Console.WriteLine($"Error al cerrar cliente: {ex.Message}");
                     }
                 }
                 connectedClients.Clear(); // Limpia la lista de clientes conectados.
@@ -111,10 +119,10 @@ namespace Server.Server        // Define un espacio de nombres para organizar la
         // Método para detener el servidor.
         public void StopServer()
         {
-            IsRunning = false; // Marca el servidor como no en ejecución.
-            cancellationTokenSource?.Cancel(); // Cancela las operaciones asíncronas.
-            CloseAllClientConnections(); // Cierra todas las conexiones de cliente.
-            listener.Stop(); // Detiene el listener.
+            IsRunning = false; // Establece que el servidor no está en ejecución.
+            cancellationTokenSource?.Cancel(); // Cancela todas las tareas asíncronas.
+            CloseAllClientConnections(); // Cierra todas las conexiones de clientes.
+            listener.Stop(); // Detiene el listener TCP.
         }
     }
 }

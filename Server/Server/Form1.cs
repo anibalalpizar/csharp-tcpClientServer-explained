@@ -4,16 +4,19 @@ using System.Windows.Forms;   // Importa el espacio de nombres para la creación
 
 namespace Server              // Define un espacio de nombres para organizar las clases relacionadas con el servidor.
 {
-    public partial class Form1 : Form // Define una clase pública que hereda de Form, representando un formulario en Windows Forms.
+    // Define una clase pública que hereda de Form, representando un formulario en Windows Forms.
+    public partial class Form1 : Form
     {
         private Server.Server server; // Instancia privada de la clase Server, que gestiona el servidor.
 
-        // Constructor del formulario
+        // Constructor del formulario.
         public Form1()
         {
             InitializeComponent(); // Inicializa los componentes del formulario (generado automáticamente).
             server = new Server.Server(); // Crea una nueva instancia del servidor.
             server.OnUserConnected += Server_OnUserConnected; // Suscribe al evento OnUserConnected del servidor.
+            server.OnUserAction += Server_OnUserAction; // Suscribe al nuevo evento OnUserAction del servidor.
+
             btnDetener.Enabled = false; // Desactiva el botón de detener al inicio.
             UpdateServerStatus(false); // Actualiza el estado del servidor a "Apagado".
         }
@@ -28,6 +31,19 @@ namespace Server              // Define un espacio de nombres para organizar las
             else
             {
                 listBoxConexiones.Items.Add(userName); // Añade el nombre del usuario conectado a la lista.
+            }
+        }
+
+        // Método que se llama cuando se registra una acción del usuario en el servidor.
+        private void Server_OnUserAction(string message)
+        {
+            if (InvokeRequired) // Verifica si se necesita invocar en el hilo del formulario.
+            {
+                Invoke(new Action<string>(Server_OnUserAction), message); // Invoca el método en el hilo del formulario.
+            }
+            else
+            {
+                listBoxEventos.Items.Add(message); // Añade el mensaje al listBoxEventos.
             }
         }
 
