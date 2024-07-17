@@ -17,14 +17,17 @@ namespace Client.UI.Mantenimientos
     {
         // Declaramos una variable privada '_categoriaUtils' para manejar las utilidades de categoría
         private CategoriaUtils _categoriaUtils;
+        private string _nombreCompleto;
+
 
         // Constructor de la clase 'frmCategoriaPelicula'
-        public frmCategoriaPelicula()
+        public frmCategoriaPelicula(string nombreCompleto)
         {
             // Inicializamos los componentes del formulario
             InitializeComponent();
             // Instanciamos la clase 'CategoriaUtils' y asignamos a '_categoriaUtils'
             _categoriaUtils = new CategoriaUtils();
+            _nombreCompleto = nombreCompleto;
         }
 
         // Método que se ejecuta cuando se hace clic en el botón 'Agregar'
@@ -99,6 +102,13 @@ namespace Client.UI.Mantenimientos
 
             // Establecemos la fuente de datos del DataGridView a la tabla de datos creada
             dgvData.DataSource = dataTable;
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            frmPrincipal frmPrincipal = new frmPrincipal(_nombreCompleto);
+            frmPrincipal.ShowDialog();
+            this.Hide();
         }
     }
 }

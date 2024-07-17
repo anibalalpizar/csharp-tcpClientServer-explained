@@ -13,17 +13,28 @@ namespace Client.UI
 {
     public partial class frmPrincipal : Form
     {
+        private string _nombreCompleto;
+
         public frmPrincipal(string nombreCompleto)
         {
             InitializeComponent();
+            _nombreCompleto = nombreCompleto;
             lblUsuarioLogueado.Text = nombreCompleto;
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            frmCategoriaPelicula frmCategoriaPelicula = new frmCategoriaPelicula();
+            frmCategoriaPelicula frmCategoriaPelicula = new frmCategoriaPelicula(_nombreCompleto);
             frmCategoriaPelicula.ShowDialog();
             this.Hide();
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            frmPelicula frmPelicula = new frmPelicula(_nombreCompleto);
+            frmPelicula.ShowDialog();
+            this.Hide();
+
         }
     }
 }

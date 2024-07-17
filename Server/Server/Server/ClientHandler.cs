@@ -14,11 +14,13 @@ namespace Server.Server // Define el espacio de nombres 'Server.Server'
     public class ClientHandler
     {
         private CategoriaPeliculaHandler _categoriaPeliculaHandler; // Instancia de 'CategoriaPeliculaHandler' para manejar categorías de películas
+        private PeliculaHandler _peliculaHandler; // Instancia de 'PeliculaHandler' para manejar películas
 
         // Constructor que inicializa la instancia de 'CategoriaPeliculaHandler'
         public ClientHandler()
         {
             _categoriaPeliculaHandler = new CategoriaPeliculaHandler();
+            _peliculaHandler = new PeliculaHandler();
         }
 
         // Método de instancia que maneja la conexión con un cliente específico
@@ -51,9 +53,13 @@ namespace Server.Server // Define el espacio de nombres 'Server.Server'
 
                             string request = Encoding.UTF8.GetString(buffer, 0, bytesRead); // Convierte los bytes leídos en una cadena
 
-                            if (request.Contains("IdCategoria")) // Verifica si la solicitud contiene "IdCategoria"
+                            if (request.Contains("IdCategoria") && request.Contains("NombreCategoria") && request.Contains("Descripcion"))// Verifica si la solicitud contiene "IdCategoria"
                             {
                                 _categoriaPeliculaHandler.HandlerCategoriaPelicula(client, request, onUserAction); // Maneja la solicitud de categoría de película
+                            }
+                            else if (request.Contains("IdPelicula") && request.Contains("Titulo"))
+                            {
+                                _peliculaHandler.HandlerPelicula(client, request, onUserAction); 
                             }
                             else
                             {
