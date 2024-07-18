@@ -15,12 +15,14 @@ namespace Server.Server // Define el espacio de nombres 'Server.Server'
     {
         private CategoriaPeliculaHandler _categoriaPeliculaHandler; // Instancia de 'CategoriaPeliculaHandler' para manejar categorías de películas
         private PeliculaHandler _peliculaHandler; // Instancia de 'PeliculaHandler' para manejar películas
+        private EncargadoHandler _encargadoHandler;
 
-        // Constructor que inicializa la instancia de 'CategoriaPeliculaHandler'
+        // Constructor que inicializa las instancias de 'CategoriaPeliculaHandler' y 'PeliculaHandler'
         public ClientHandler()
         {
             _categoriaPeliculaHandler = new CategoriaPeliculaHandler();
             _peliculaHandler = new PeliculaHandler();
+            _encargadoHandler = new EncargadoHandler();
         }
 
         // Método de instancia que maneja la conexión con un cliente específico
@@ -53,13 +55,20 @@ namespace Server.Server // Define el espacio de nombres 'Server.Server'
 
                             string request = Encoding.UTF8.GetString(buffer, 0, bytesRead); // Convierte los bytes leídos en una cadena
 
-                            if (request.Contains("IdCategoria") && request.Contains("NombreCategoria") && request.Contains("Descripcion"))// Verifica si la solicitud contiene "IdCategoria"
+                            // Verifica si la solicitud contiene "IdCategoria", "NombreCategoria" y "Descripcion"
+                            if (request.Contains("IdCategoria") && request.Contains("NombreCategoria") && request.Contains("Descripcion"))
                             {
                                 _categoriaPeliculaHandler.HandlerCategoriaPelicula(client, request, onUserAction); // Maneja la solicitud de categoría de película
                             }
+                            // Verifica si la solicitud contiene "IdPelicula" y "Titulo"
                             else if (request.Contains("IdPelicula") && request.Contains("Titulo"))
                             {
-                                _peliculaHandler.HandlerPelicula(client, request, onUserAction); 
+                                _peliculaHandler.HandlerPelicula(client, request, onUserAction); // Maneja la solicitud de película
+                            }
+                            // Verifica si la solicutd contiene los atributos de un encargado
+                            else if (request.Contains("IdEncargado") && request.Contains("Identificacion") && request.Contains("Nombre"))
+                            {
+                                _encargadoHandler.HandlerEncargado(client, request, onUserAction);
                             }
                             else
                             {

@@ -36,5 +36,12 @@ namespace Client.UI
             this.Hide();
 
         }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            frmEncargado frmEncargado = new frmEncargado(_nombreCompleto);
+            frmEncargado.ShowDialog();
+            this.Hide();
+        }
     }
 }
