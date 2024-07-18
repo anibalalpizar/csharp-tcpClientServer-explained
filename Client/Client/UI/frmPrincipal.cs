@@ -43,5 +43,13 @@ namespace Client.UI
             frmEncargado.ShowDialog();
             this.Hide();
         }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            frmSucursal frmSucursal = new frmSucursal(_nombreCompleto);
+            frmSucursal.ShowDialog();
+            this.Hide();
+
+        }
     }
 }

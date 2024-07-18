@@ -1,7 +1,20 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Client\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F6A68EDB-8A7A-462D-8EE4-153FFFD65E97}|Client\\Client.csproj|c:\\users\\anibal\\desktop\\csharp-tcpclientserver-explained\\client\\client\\ui\\mantenimientos\\frmsucursal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6A68EDB-8A7A-462D-8EE4-153FFFD65E97}|Client\\Client.csproj|solutionrelative:client\\ui\\mantenimientos\\frmsucursal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6A68EDB-8A7A-462D-8EE4-153FFFD65E97}|Client\\Client.csproj|c:\\users\\anibal\\desktop\\csharp-tcpclientserver-explained\\client\\client\\utils\\sucursalutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6A68EDB-8A7A-462D-8EE4-153FFFD65E97}|Client\\Client.csproj|solutionrelative:client\\utils\\sucursalutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6A68EDB-8A7A-462D-8EE4-153FFFD65E97}|Client\\Client.csproj|c:\\users\\anibal\\desktop\\csharp-tcpclientserver-explained\\client\\client\\ui\\mantenimientos\\frmsucursal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F6A68EDB-8A7A-462D-8EE4-153FFFD65E97}|Client\\Client.csproj|solutionrelative:client\\ui\\mantenimientos\\frmsucursal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +22,49 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SucursalUtils.cs",
+              "DocumentMoniker": "C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Client\\Client\\Utils\\SucursalUtils.cs",
+              "RelativeDocumentMoniker": "Client\\Utils\\SucursalUtils.cs",
+              "ToolTip": "C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Client\\Client\\Utils\\SucursalUtils.cs",
+              "RelativeToolTip": "Client\\Utils\\SucursalUtils.cs",
+              "ViewState": "AQIAAEsAAAAAAAAAAAAiwFMAAAA+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T20:27:43.36Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "frmSucursal.cs",
+              "DocumentMoniker": "C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Client\\Client\\UI\\Mantenimientos\\frmSucursal.cs",
+              "RelativeDocumentMoniker": "Client\\UI\\Mantenimientos\\frmSucursal.cs",
+              "ToolTip": "C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Client\\Client\\UI\\Mantenimientos\\frmSucursal.cs",
+              "RelativeToolTip": "Client\\UI\\Mantenimientos\\frmSucursal.cs",
+              "ViewState": "AQIAAIIAAAAAAAAAAADwv4wAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T20:28:28.233Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmSucursal.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Client\\Client\\UI\\Mantenimientos\\frmSucursal.cs",
+              "RelativeDocumentMoniker": "Client\\UI\\Mantenimientos\\frmSucursal.cs",
+              "ToolTip": "C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Client\\Client\\UI\\Mantenimientos\\frmSucursal.cs [Design]",
+              "RelativeToolTip": "Client\\UI\\Mantenimientos\\frmSucursal.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T08:23:34.12Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

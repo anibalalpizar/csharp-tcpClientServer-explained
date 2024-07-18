@@ -5,8 +5,11 @@
     "\\Client\\Client",
     "\\Client\\Client\\UI",
     "\\Client\\Client\\UI\\Mantenimientos",
-    "\\Server"
+    "\\Server",
+    "\\Server\\Server",
+    "\\Server\\Server\\Layers",
+    "\\Server\\Server\\Layers\\DAL"
   ],
-  "SelectedNode": "\\Client\\Client.sln",
+  "SelectedNode": "\\Client\\Client\\UI\\Mantenimientos\\frmSucursal.cs",
   "PreviewInSolutionExplorer": false
 }

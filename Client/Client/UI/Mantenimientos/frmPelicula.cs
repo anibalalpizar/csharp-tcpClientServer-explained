@@ -41,7 +41,7 @@ namespace Client.UI.Mantenimientos // Define el espacio de nombres 'Client.UI.Ma
             {
                 foreach (var categoria in categorias) // Itera sobre cada categoría y la agrega al combo box
                 {
-                    cmbCategorias.Items.Add(categoria.NombreCategoria);
+                    cmbCategorias.Items.Add(categoria.IdCategoria);
                 }
             }
             else
