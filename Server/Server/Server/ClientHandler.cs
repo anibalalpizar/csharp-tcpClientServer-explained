@@ -17,6 +17,7 @@ namespace Server.Server // Define el espacio de nombres 'Server.Server'
         private PeliculaHandler _peliculaHandler; // Instancia de 'PeliculaHandler' para manejar películas
         private EncargadoHandler _encargadoHandler; // Instancia de 'EncargadoHandler' para manejar encargados
         private SucursalHandler _sucursalHandler; // Instancia de 'SucursalHandler' para manejar sucursales
+        private ClienteHandler _clienteHandler; // Instancia de 'ClienteHandler' para manejar clientes
 
         // Constructor que inicializa las instancias de 'CategoriaPeliculaHandler' y 'PeliculaHandler'
         public ClientHandler()
@@ -25,6 +26,7 @@ namespace Server.Server // Define el espacio de nombres 'Server.Server'
             _peliculaHandler = new PeliculaHandler();
             _encargadoHandler = new EncargadoHandler();
             _sucursalHandler = new SucursalHandler();
+            _clienteHandler = new ClienteHandler();
         }
 
         // Método de instancia que maneja la conexión con un cliente específico
@@ -76,6 +78,10 @@ namespace Server.Server // Define el espacio de nombres 'Server.Server'
                             else if (request.Contains("IdSucursal") && request.Contains("Nombre"))
                             {
                                 _sucursalHandler.HandlerSucursal(client, request, onUserAction); // Maneja la solicitud de sucursal
+                            }
+                            else if (request.Contains("IdCliente") && request.Contains("Identificacion") && request.Contains("Nombre"))
+                            {
+                                _clienteHandler.HandlerCliente(client, request, onUserAction);
                             }
                             else
                             {

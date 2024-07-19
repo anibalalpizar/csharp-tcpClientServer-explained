@@ -51,5 +51,12 @@ namespace Client.UI
             this.Hide();
 
         }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            frmCliente frmCliente = new frmCliente(_nombreCompleto);
+            frmCliente.ShowDialog();
+            this.Hide();
+        }
     }
 }
