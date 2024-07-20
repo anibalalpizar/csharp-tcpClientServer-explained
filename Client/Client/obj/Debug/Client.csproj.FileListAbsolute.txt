@@ -28,3 +28,4 @@ C:\Users\anibal\Desktop\csharp-tcpClientServer-explained\Client\Client\obj\Debug
 C:\Users\anibal\Desktop\csharp-tcpClientServer-explained\Client\Client\obj\Debug\Client.UI.Mantenimientos.frmEncargado.resources
 C:\Users\anibal\Desktop\csharp-tcpClientServer-explained\Client\Client\obj\Debug\Client.UI.Mantenimientos.frmSucursal.resources
 C:\Users\anibal\Desktop\csharp-tcpClientServer-explained\Client\Client\obj\Debug\Client.UI.Mantenimientos.frmCliente.resources
+C:\Users\anibal\Desktop\csharp-tcpClientServer-explained\Client\Client\obj\Debug\Client.UI.Mantenimientos.frmPeliculaxSucursal.resources

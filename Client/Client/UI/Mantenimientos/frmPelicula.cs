@@ -124,5 +124,10 @@ namespace Client.UI.Mantenimientos // Define el espacio de nombres 'Client.UI.Ma
 
             dgvPeliculas.DataSource = dataTable; // Establece la fuente de datos del data grid view
         }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

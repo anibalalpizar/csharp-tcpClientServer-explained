@@ -18,6 +18,7 @@ namespace Server.Server // Define el espacio de nombres 'Server.Server'
         private EncargadoHandler _encargadoHandler; // Instancia de 'EncargadoHandler' para manejar encargados
         private SucursalHandler _sucursalHandler; // Instancia de 'SucursalHandler' para manejar sucursales
         private ClienteHandler _clienteHandler; // Instancia de 'ClienteHandler' para manejar clientes
+        private PeliculaXSucursalHandler _peliculaXSucursalHandler; // Instancia de 'PeliculaXSucursalHandler' para manejar películas por sucursal
 
         // Constructor que inicializa las instancias de 'CategoriaPeliculaHandler' y 'PeliculaHandler'
         public ClientHandler()
@@ -27,6 +28,7 @@ namespace Server.Server // Define el espacio de nombres 'Server.Server'
             _encargadoHandler = new EncargadoHandler();
             _sucursalHandler = new SucursalHandler();
             _clienteHandler = new ClienteHandler();
+            _peliculaXSucursalHandler = new PeliculaXSucursalHandler();
         }
 
         // Método de instancia que maneja la conexión con un cliente específico
@@ -60,6 +62,8 @@ namespace Server.Server // Define el espacio de nombres 'Server.Server'
                             string request = Encoding.UTF8.GetString(buffer, 0, bytesRead); // Convierte los bytes leídos en una cadena
 
                             // Verifica si la solicitud contiene "IdCategoria", "NombreCategoria" y "Descripcion"
+
+                            
                             if (request.Contains("IdCategoria") && request.Contains("NombreCategoria") && request.Contains("Descripcion"))
                             {
                                 _categoriaPeliculaHandler.HandlerCategoriaPelicula(client, request, onUserAction); // Maneja la solicitud de categoría de película
@@ -82,6 +86,10 @@ namespace Server.Server // Define el espacio de nombres 'Server.Server'
                             else if (request.Contains("IdCliente") && request.Contains("Identificacion") && request.Contains("Nombre"))
                             {
                                 _clienteHandler.HandlerCliente(client, request, onUserAction);
+                            }
+                            else if (request.Contains("IdSucursal") && request.Contains("Peliculas") && request.Contains("Cantidad"))
+                            {
+                                _peliculaXSucursalHandler.HandlerPeliculaXSucursal(client, request, onUserAction);
                             }
                             else
                             {

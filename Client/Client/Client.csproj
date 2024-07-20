@@ -59,6 +59,7 @@
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Encargado.cs" />
     <Compile Include="Models\Pelicula.cs" />
+    <Compile Include="Models\PeliculaXSucursal.cs" />
     <Compile Include="Models\Sucursal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,6 +93,12 @@
     <Compile Include="UI\Mantenimientos\frmPelicula.Designer.cs">
       <DependentUpon>frmPelicula.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Mantenimientos\frmPeliculaxSucursal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Mantenimientos\frmPeliculaxSucursal.Designer.cs">
+      <DependentUpon>frmPeliculaxSucursal.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Mantenimientos\frmSucursal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +108,7 @@
     <Compile Include="Utils\CategoriaUtils.cs" />
     <Compile Include="Utils\ClienteUtils.cs" />
     <Compile Include="Utils\EncargadoUtils.cs" />
+    <Compile Include="Utils\PelicuaXSucursalUtils.cs" />
     <Compile Include="Utils\PeliculaUtils.cs" />
     <Compile Include="Utils\ServerUtils.cs" />
     <Compile Include="Utils\SucursalUtils.cs" />
@@ -130,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Mantenimientos\frmPelicula.resx">
       <DependentUpon>frmPelicula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Mantenimientos\frmPeliculaxSucursal.resx">
+      <DependentUpon>frmPeliculaxSucursal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Mantenimientos\frmSucursal.resx">
       <DependentUpon>frmSucursal.cs</DependentUpon>

@@ -58,5 +58,12 @@ namespace Client.UI
             frmCliente.ShowDialog();
             this.Hide();
         }
+
+        private void toolStripButton6_Click(object sender, EventArgs e)
+        {
+            frmPeliculaxSucursal frmPeliculaxSucursal = new frmPeliculaxSucursal(_nombreCompleto);
+            frmPeliculaxSucursal.ShowDialog();
+            this.Hide();
+        }
     }
 }
