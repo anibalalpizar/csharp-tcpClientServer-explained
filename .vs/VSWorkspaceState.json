@@ -4,13 +4,14 @@
     "\\Client",
     "\\Client\\Client",
     "\\Client\\Client\\UI",
-    "\\Client\\Client\\UI\\Mantenimientos",
+    "\\Client\\Client\\UI\\Proceso",
     "\\Server",
     "\\Server\\Server",
     "\\Server\\Server\\Layers",
     "\\Server\\Server\\Layers\\DAL",
-    "\\Server\\Server\\Models"
+    "\\Server\\Server\\Models",
+    "\\Server\\Server\\Server"
   ],
-  "SelectedNode": "\\Server\\Server\\Models\\PeliculaXSucursal.cs",
+  "SelectedNode": "\\Server\\Server\\Layers\\DAL\\SucursalDAL.cs",
   "PreviewInSolutionExplorer": false
 }

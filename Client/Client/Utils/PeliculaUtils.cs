@@ -100,5 +100,92 @@ namespace Client.Utils // Define el espacio de nombres 'Client.Utils'
                 return null; // Devuelve null en caso de error
             }
         }
+
+        // Metodo para realizar un prestamo de pelicula
+        public string PrestarPelicula(int idCliente, int idSucursal, int idPelicula)
+        {
+            // Crea un objeto 'Prestamo' con los datos proporcionados
+            Prestamo prestamo = new Prestamo
+            {
+                IdCliente = idCliente,
+                IdPelicula = idPelicula,
+                IdSucursal = idSucursal,
+                Accion = "Prestar" // Define la acción que se está realizando
+            };
+
+            // Serializa el objeto 'Prestamo' a JSON
+            string jsonData = JsonConvert.SerializeObject(prestamo);
+
+            // Convierte el JSON a una cadena de bytes
+            byte[] data = Encoding.UTF8.GetBytes(jsonData);
+
+            try
+            {
+                // Crea una conexión TCP con el servidor
+                using (TcpClient client = new TcpClient("127.0.0.1", 15500))
+                {
+                    NetworkStream stream = client.GetStream();
+                    // Envía los datos al servidor
+                    stream.Write(data, 0, data.Length);
+
+                    // Lee la respuesta del servidor
+                    byte[] buffer = new byte[1024];
+                    int bytesRead = stream.Read(buffer, 0, buffer.Length);
+                    string response = Encoding.UTF8.GetString(buffer, 0, bytesRead);
+
+                    return response; // Devuelve la respuesta del servidor
+                }
+            }
+            catch (Exception ex)
+            {
+                // Captura y devuelve un mensaje de error en caso de excepción
+                return $"Error al prestar la película: {ex.Message}";
+            }
+
+        }
+
+        // Metodo para mis peliculas
+        public List<object> MisPeliculas(int idCliente)
+        {
+            // Crea un objeto 'Prestamo' con los datos proporcionados
+            Prestamo prestamo = new Prestamo
+            {
+                IdCliente = idCliente,
+                Accion = "MisPeliculas" // Define la acción que se está realizando
+            };
+
+            // Serializa el objeto 'Prestamo' a JSON
+            string jsonData = JsonConvert.SerializeObject(prestamo);
+
+            // Convierte el JSON a una cadena de bytes
+            byte[] data = Encoding.UTF8.GetBytes(jsonData);
+
+            try
+            {
+                // Crea una conexión TCP con el servidor
+                using (TcpClient client = new TcpClient("127.0.0.1", 15500))
+                {
+                    NetworkStream stream = client.GetStream();
+                    // Envía los datos al servidor
+                    stream.Write(data, 0, data.Length);
+
+                    // Lee la respuesta del servidor
+                    byte[] buffer = new byte[4096];
+                    int bytesRead = stream.Read(buffer, 0, buffer.Length);
+                    string response = Encoding.UTF8.GetString(buffer, 0, bytesRead);
+
+                    // Deserializa la respuesta JSON a una lista de películas
+                    List<object> peliculas = JsonConvert.DeserializeObject<List<object>>(response);
+
+                    return peliculas; // Devuelve la lista de películas
+                }
+            }
+            catch (Exception ex)
+            {
+                // Captura y muestra un mensaje de error en caso de excepción
+                Console.WriteLine($"Error al obtener las películas: {ex.Message}");
+                return null; // Devuelve null en caso de error
+            }
+        }
     }
 }

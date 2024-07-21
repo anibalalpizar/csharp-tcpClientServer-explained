@@ -75,6 +75,7 @@
     <Compile Include="Models\Encargado.cs" />
     <Compile Include="Models\Pelicula.cs" />
     <Compile Include="Models\PeliculaXSucursal.cs" />
+    <Compile Include="Models\Prestamo.cs" />
     <Compile Include="Models\Sucursal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

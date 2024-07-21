@@ -18,17 +18,20 @@ namespace Client.UI.Mantenimientos
         // Declaramos una variable privada '_categoriaUtils' para manejar las utilidades de categoría
         private CategoriaUtils _categoriaUtils;
         private string _nombreCompleto;
+        private string _idUsuario;
 
 
         // Constructor de la clase 'frmCategoriaPelicula'
-        public frmCategoriaPelicula(string nombreCompleto)
+        public frmCategoriaPelicula(string nombreCompleto, string idUsuario)
         {
             // Inicializamos los componentes del formulario
             InitializeComponent();
             // Instanciamos la clase 'CategoriaUtils' y asignamos a '_categoriaUtils'
             _categoriaUtils = new CategoriaUtils();
             _nombreCompleto = nombreCompleto;
+            _idUsuario = idUsuario;
         }
+
 
         // Método que se ejecuta cuando se hace clic en el botón 'Agregar'
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -52,6 +55,20 @@ namespace Client.UI.Mantenimientos
             {
                 // Si están vacíos, mostramos un mensaje de error y salimos del método
                 MessageBox.Show("Todos los campos son obligatorios.");
+                return;
+            }
+
+            // nombre cateogria no puede ser mayor a 25 caracteres
+            if (nombreCategoria.Length > 25)
+            {
+                MessageBox.Show("El nombre de la categoría no puede ser mayor a 25 caracteres.");
+                return;
+            }
+
+            // descripción no puede ser mayor a 150 caracteres
+            if (descripcion.Length > 150)
+            {
+                MessageBox.Show("La descripción de la categoría no puede ser mayor a 150 caracteres.");
                 return;
             }
 
@@ -106,7 +123,7 @@ namespace Client.UI.Mantenimientos
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            frmPrincipal frmPrincipal = new frmPrincipal(_nombreCompleto);
+            frmPrincipal frmPrincipal = new frmPrincipal(_nombreCompleto, _idUsuario);
             frmPrincipal.ShowDialog();
             this.Hide();
         }

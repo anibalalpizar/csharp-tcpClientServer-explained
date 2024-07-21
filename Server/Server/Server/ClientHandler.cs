@@ -63,10 +63,18 @@ namespace Server.Server // Define el espacio de nombres 'Server.Server'
 
                             // Verifica si la solicitud contiene "IdCategoria", "NombreCategoria" y "Descripcion"
 
-                            
+
                             if (request.Contains("IdCategoria") && request.Contains("NombreCategoria") && request.Contains("Descripcion"))
                             {
                                 _categoriaPeliculaHandler.HandlerCategoriaPelicula(client, request, onUserAction); // Maneja la solicitud de categoría de película
+                            }
+                            else if (request.Contains("Prestar"))
+                            {
+                                _peliculaHandler.HandlerPelicula(client, request, onUserAction);
+                            }
+                            else if (request.Contains("MisPeliculas"))
+                            {
+                                _peliculaHandler.HandlerPelicula(client, request, onUserAction);
                             }
                             // Verifica si la solicitud contiene "IdPelicula" y "Titulo"
                             else if (request.Contains("IdPelicula") && request.Contains("Titulo"))

@@ -44,6 +44,24 @@ namespace Server.Server
                         onUserAction?.Invoke("Un usuario ha obtenido las sucursales."); // Invoca la acción 'onUserAction' si está definida
                     }
                 }
+                else if (request.Contains("ID"))
+                {
+                    // Deserializa el JSON de la solicitud para obtener el IdSucursal
+                    Sucursal solicitud = JsonConvert.DeserializeObject<Sucursal>(request);
+                    int idSucursal = solicitud.IdSucursal;
+
+                    // Llama al método para obtener los detalles de la sucursal por su ID
+                    object sucursal = sucursalBLL.ObtenerPeliculaPorSucursal(idSucursal);
+                    string resultMessage = JsonConvert.SerializeObject(sucursal);
+
+                    using (NetworkStream stream = client.GetStream())
+                    {
+                        byte[] responseBytes = Encoding.UTF8.GetBytes(resultMessage);
+                        stream.Write(responseBytes, 0, responseBytes.Length);
+
+                        onUserAction?.Invoke("Un usuario ha obtenido los detalles de una sucursal.");
+                    }
+                }
             }
             catch (Exception ex) // Captura cualquier excepción
             {

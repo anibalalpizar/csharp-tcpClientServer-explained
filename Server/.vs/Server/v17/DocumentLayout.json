@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Server\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{500CA759-B558-4A3C-8F38-E5DA327D812C}|Server\\Server.csproj|c:\\users\\anibal\\desktop\\csharp-tcpclientserver-explained\\server\\server\\server\\clienthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{500CA759-B558-4A3C-8F38-E5DA327D812C}|Server\\Server.csproj|solutionrelative:server\\server\\clienthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{500CA759-B558-4A3C-8F38-E5DA327D812C}|Server\\Server.csproj|c:\\users\\anibal\\desktop\\csharp-tcpclientserver-explained\\server\\server\\layers\\dal\\sucursaldal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{500CA759-B558-4A3C-8F38-E5DA327D812C}|Server\\Server.csproj|solutionrelative:server\\layers\\dal\\sucursaldal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{500CA759-B558-4A3C-8F38-E5DA327D812C}|Server\\Server.csproj|c:\\users\\anibal\\desktop\\csharp-tcpclientserver-explained\\server\\server\\server\\peliculaxsucursalhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{500CA759-B558-4A3C-8F38-E5DA327D812C}|Server\\Server.csproj|solutionrelative:server\\server\\peliculaxsucursalhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{500CA759-B558-4A3C-8F38-E5DA327D812C}|Server\\Server.csproj|C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Server\\server\\layers\\dal\\peliculadal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{500CA759-B558-4A3C-8F38-E5DA327D812C}|Server\\Server.csproj|solutionrelative:server\\layers\\dal\\peliculadal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{500CA759-B558-4A3C-8F38-E5DA327D812C}|Server\\Server.csproj|c:\\users\\anibal\\desktop\\csharp-tcpclientserver-explained\\server\\server\\layers\\dal\\peliculaxsucursaldal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{500CA759-B558-4A3C-8F38-E5DA327D812C}|Server\\Server.csproj|solutionrelative:server\\layers\\dal\\peliculaxsucursaldal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{500CA759-B558-4A3C-8F38-E5DA327D812C}|Server\\Server.csproj|C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Server\\server\\layers\\bll\\sucursalbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{500CA759-B558-4A3C-8F38-E5DA327D812C}|Server\\Server.csproj|solutionrelative:server\\layers\\bll\\sucursalbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{500CA759-B558-4A3C-8F38-E5DA327D812C}|Server\\Server.csproj|c:\\users\\anibal\\desktop\\csharp-tcpclientserver-explained\\server\\server\\layers\\bll\\peliculaxsucursalbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{500CA759-B558-4A3C-8F38-E5DA327D812C}|Server\\Server.csproj|solutionrelative:server\\layers\\bll\\peliculaxsucursalbll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{500CA759-B558-4A3C-8F38-E5DA327D812C}|Server\\Server.csproj|C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Server\\server\\layers\\bll\\peliculabll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{500CA759-B558-4A3C-8F38-E5DA327D812C}|Server\\Server.csproj|solutionrelative:server\\layers\\bll\\peliculabll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{500CA759-B558-4A3C-8F38-E5DA327D812C}|Server\\Server.csproj|C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Server\\server\\server\\sucursalhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{500CA759-B558-4A3C-8F38-E5DA327D812C}|Server\\Server.csproj|solutionrelative:server\\server\\sucursalhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 235,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,55 +38,64 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PeliculaXSucursalHandler.cs",
-              "DocumentMoniker": "C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Server\\Server\\Server\\PeliculaXSucursalHandler.cs",
-              "RelativeDocumentMoniker": "Server\\Server\\PeliculaXSucursalHandler.cs",
-              "ToolTip": "C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Server\\Server\\Server\\PeliculaXSucursalHandler.cs",
-              "RelativeToolTip": "Server\\Server\\PeliculaXSucursalHandler.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAcwDIAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-20T03:28:01.743Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ClientHandler.cs",
-              "DocumentMoniker": "C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Server\\Server\\Server\\ClientHandler.cs",
-              "RelativeDocumentMoniker": "Server\\Server\\ClientHandler.cs",
-              "ToolTip": "C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Server\\Server\\Server\\ClientHandler.cs",
-              "RelativeToolTip": "Server\\Server\\ClientHandler.cs",
-              "ViewState": "AQIAAHIAAAAAAAAAAAAuwI0AAAARAAAA",
+              "Title": "SucursalDAL.cs",
+              "DocumentMoniker": "C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Server\\Server\\Layers\\DAL\\SucursalDAL.cs",
+              "RelativeDocumentMoniker": "Server\\Layers\\DAL\\SucursalDAL.cs",
+              "ToolTip": "C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Server\\Server\\Layers\\DAL\\SucursalDAL.cs",
+              "RelativeToolTip": "Server\\Layers\\DAL\\SucursalDAL.cs",
+              "ViewState": "AQIAAJIAAAAAAAAAAAAswLUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-20T03:27:38.813Z",
+              "WhenOpened": "2024-07-20T21:54:34.328Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PeliculaXSucursalBLL.cs",
-              "DocumentMoniker": "C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Server\\Server\\Layers\\BLL\\PeliculaXSucursalBLL.cs",
-              "RelativeDocumentMoniker": "Server\\Layers\\BLL\\PeliculaXSucursalBLL.cs",
-              "ToolTip": "C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Server\\Server\\Layers\\BLL\\PeliculaXSucursalBLL.cs",
-              "RelativeToolTip": "Server\\Layers\\BLL\\PeliculaXSucursalBLL.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAkAAAA",
+              "DocumentIndex": 1,
+              "Title": "PeliculaDAL.cs",
+              "DocumentMoniker": "C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Server\\Server\\Layers\\DAL\\PeliculaDAL.cs",
+              "RelativeDocumentMoniker": "Server\\Layers\\DAL\\PeliculaDAL.cs",
+              "ToolTip": "C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Server\\Server\\Layers\\DAL\\PeliculaDAL.cs",
+              "RelativeToolTip": "Server\\Layers\\DAL\\PeliculaDAL.cs",
+              "ViewState": "AQIAALgAAAAAAAAAAAAQwOYAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-20T03:21:19.209Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-20T21:54:08.027Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "PeliculaXSucursalDAL.cs",
-              "DocumentMoniker": "C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Server\\Server\\Layers\\DAL\\PeliculaXSucursalDAL.cs",
-              "RelativeDocumentMoniker": "Server\\Layers\\DAL\\PeliculaXSucursalDAL.cs",
-              "ToolTip": "C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Server\\Server\\Layers\\DAL\\PeliculaXSucursalDAL.cs",
-              "RelativeToolTip": "Server\\Layers\\DAL\\PeliculaXSucursalDAL.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAIcAAAABAAAA",
+              "Title": "SucursalBLL.cs",
+              "DocumentMoniker": "C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Server\\Server\\Layers\\BLL\\SucursalBLL.cs",
+              "RelativeDocumentMoniker": "Server\\Layers\\BLL\\SucursalBLL.cs",
+              "ToolTip": "C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Server\\Server\\Layers\\BLL\\SucursalBLL.cs",
+              "RelativeToolTip": "Server\\Layers\\BLL\\SucursalBLL.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-20T01:45:43.136Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-20T21:53:52.377Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PeliculaBLL.cs",
+              "DocumentMoniker": "C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Server\\Server\\Layers\\BLL\\PeliculaBLL.cs",
+              "RelativeDocumentMoniker": "Server\\Layers\\BLL\\PeliculaBLL.cs",
+              "ToolTip": "C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Server\\Server\\Layers\\BLL\\PeliculaBLL.cs",
+              "RelativeToolTip": "Server\\Layers\\BLL\\PeliculaBLL.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-20T21:53:32.467Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SucursalHandler.cs",
+              "DocumentMoniker": "C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Server\\Server\\Server\\SucursalHandler.cs",
+              "RelativeDocumentMoniker": "Server\\Server\\SucursalHandler.cs",
+              "ToolTip": "C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Server\\Server\\Server\\SucursalHandler.cs",
+              "RelativeToolTip": "Server\\Server\\SucursalHandler.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAQwEgAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-20T21:53:01.016Z"
             }
           ]
         },

@@ -24,5 +24,11 @@ namespace Server.Layers.BLL
         {
             return sucursalDAL.ObtenerTodasSucursales(); // Llama al método para obtener todas las sucursales de la base de datos y retorna el resultado
         }
+
+        // Método para obtener una sucursal por Id
+        public List<object> ObtenerPeliculaPorSucursal(int idSucursal)
+        {
+            return sucursalDAL.ObtenerPeliculasPorSucursal(idSucursal); // Llama al método para obtener una sucursal por Id de la base de datos y retorna el resultado
+        }
     }
 }

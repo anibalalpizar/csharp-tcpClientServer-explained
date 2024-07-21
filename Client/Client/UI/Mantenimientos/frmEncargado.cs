@@ -11,13 +11,15 @@ namespace Client.UI.Mantenimientos // Define el espacio de nombres 'Client.UI.Ma
     {
         private EncargadoUtils _encargadoUtils; // Instancia de la utilidad de encargados
         private string _nombreCompleto; // Almacena el nombre completo del usuario
+        private string _idUsuario; // Almacena el ID del usuario
 
         // Constructor de la clase, inicializa componentes y establece el nombre completo del usuario
-        public frmEncargado(string nombreCompleto)
+        public frmEncargado(string nombreCompleto, string idUsuario)
         {
             InitializeComponent(); // Inicializa los componentes de la interfaz
             _encargadoUtils = new EncargadoUtils(); // Inicializa la utilidad de encargados
             _nombreCompleto = nombreCompleto; // Establece el nombre completo del usuario
+            _idUsuario = idUsuario; // Establece el ID del usuario
         }
 
         // Evento que se dispara al hacer clic en el botón 'Registrar'
@@ -96,7 +98,7 @@ namespace Client.UI.Mantenimientos // Define el espacio de nombres 'Client.UI.Ma
         // Evento que se dispara al hacer clic en el botón del menú
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            frmPrincipal frmPrincipal = new frmPrincipal(_nombreCompleto); // Crea una nueva instancia del formulario principal
+            frmPrincipal frmPrincipal = new frmPrincipal(_nombreCompleto, _idUsuario); // Crea una nueva instancia del formulario principal
             frmPrincipal.ShowDialog(); // Muestra el formulario principal como un cuadro de diálogo
             this.Hide(); // Oculta el formulario actual
         }

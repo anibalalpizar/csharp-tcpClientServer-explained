@@ -102,5 +102,48 @@ namespace Client.Utils
                 return null;
             }
         }
+
+        // Metodo para obtener una sucursal por su ID
+        public object ObtenerPorId(int idSucursal)
+        {
+            // Crea un objeto de tipo Sucursal con el ID proporcionado
+            Sucursal solicitud = new Sucursal
+            {
+                IdSucursal = idSucursal,
+                Accion = "ID" // Indica que se va a obtener una sucursal por su ID
+            };
+
+            // Convierte el objeto de tipo Sucursal a un objeto JSON
+            string jsonData = JsonConvert.SerializeObject(solicitud);
+            // Convierte el objeto JSON a un arreglo de bytes
+            byte[] data = Encoding.UTF8.GetBytes(jsonData);
+
+            try
+            {
+                // Crea una conexión con el servidor
+                using (TcpClient client = new TcpClient("127.0.0.1", 15500))
+                {
+                    // Obtiene el flujo de datos de la conexión
+                    NetworkStream stream = client.GetStream();
+                    // Escribe los datos en el flujo de datos
+                    stream.Write(data, 0, data.Length);
+                    // Crea un arreglo de bytes para almacenar la respuesta del servidor
+                    byte[] buffer = new byte[4096];
+                    // Lee los datos del flujo de datos y los almacena en el arreglo de bytes
+                    int bytesRead = stream.Read(buffer, 0, buffer.Length);
+                    // Convierte los datos del arreglo de bytes a una cadena
+                    string response = Encoding.UTF8.GetString(buffer, 0, bytesRead);
+                    // Convierte la cadena a un objeto
+                    object sucursal = JsonConvert.DeserializeObject<object>(response);
+                    // Retorna la sucursal
+                    return sucursal;
+                }
+            }
+            catch (Exception ex) // Captura cualquier excepción que ocurra
+            {
+                Console.WriteLine($"Error al obtener la sucursal: {ex.Message}");
+                return null;
+            }
+        }
     }
 }

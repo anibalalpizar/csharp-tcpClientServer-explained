@@ -111,5 +111,71 @@ namespace Server.Layers.DAL
                 throw new Exception($"Error al obtener las sucursales: {ex.Message}");
             }
         }
+
+        // Método para obtener las peliculas de una sucursal
+        public List<object> ObtenerPeliculasPorSucursal(int idSucursal)
+        {
+            try
+            {
+                List<object> peliculas = new List<object>();
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string query = @"
+                    
+                    SELECT 
+                        ps.IdSucursal,
+                        ps.IdPelicula,
+                        ps.Cantidad,
+                        p.IdCategoria,
+                        p.Titulo,
+                        p.AnioLanzamiento,
+                        p.Idioma,
+                        c.IdCategoria,
+                        c.NombreCategoria,
+                        c.Descripcion
+                    FROM 
+                        PeliculaXSucursal ps
+                    JOIN 
+                        Pelicula p ON ps.IdPelicula = p.IdPelicula
+                    JOIN 
+                        CategoriaPelicula c ON p.IdCategoria = c.IdCategoria
+                    WHERE 
+                        ps.IdSucursal = @IdSucursal";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@IdSucursal", idSucursal);
+                        connection.Open();
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                var pelicula = new
+                                {
+                                    IdSucursal = reader.GetInt32(0),
+                                    IdPelicula = reader.GetInt32(1),
+                                    Cantidad = reader.GetInt32(2),
+                                    IdCategoria = reader.GetInt32(3),
+                                    Titulo = reader.GetString(4),
+                                    AnioLanzamiento = reader.GetInt32(5),
+                                    Idioma = reader.GetString(6),
+                                    NombreCategoria = reader.GetString(8),
+                                    Descripcion = reader.GetString(9)
+                                };
+                                peliculas.Add(pelicula);
+                            }
+                        }
+                    }
+                }
+                return peliculas;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al obtener las películas por sucursal: {ex.Message}");
+            }
+        }
+
     }
 }

@@ -47,7 +47,7 @@ namespace Client
                     if (!string.IsNullOrEmpty(response)) // Verifica si la respuesta no está vacía.
                     {
                         MessageBox.Show("Inicio de sesión exitoso."); // Muestra un mensaje de éxito.
-                        frmPrincipal mainForm = new frmPrincipal(response); // Crea una instancia del formulario principal con la respuesta del servidor.
+                        frmPrincipal mainForm = new frmPrincipal(response, message); // Crea una instancia del formulario principal con la respuesta del servidor.
                         this.Hide(); // Oculta el formulario actual.
                         mainForm.ShowDialog(); // Muestra el formulario principal como un diálogo.
                         this.Close(); // Cierra el formulario actual.

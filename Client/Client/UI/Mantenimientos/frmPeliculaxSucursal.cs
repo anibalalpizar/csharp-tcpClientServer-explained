@@ -1,6 +1,7 @@
 ﻿using Client.Models;
 using Client.Utils;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -10,15 +11,17 @@ namespace Client.UI.Mantenimientos
     public partial class frmPeliculaxSucursal : Form
     {
         private string _nombreCompleto;
+        private string _idUsuario;
         private SucursalUtils _sucursalUtils;
         private PeliculaUtils _peliculaUtils;
         private PelicuaXSucursalUtils _pelicuaXSucursalUtils;
 
-        public frmPeliculaxSucursal(string nombreCompleto)
+        public frmPeliculaxSucursal(string nombreCompleto, string idUsuario)
         {
             InitializeComponent();
             InitializeDataGridView();
             _nombreCompleto = nombreCompleto;
+            _idUsuario = idUsuario;
             _sucursalUtils = new SucursalUtils();
             _peliculaUtils = new PeliculaUtils();
             _pelicuaXSucursalUtils = new PelicuaXSucursalUtils();
@@ -26,7 +29,7 @@ namespace Client.UI.Mantenimientos
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            frmPrincipal frmPrincipal = new frmPrincipal(_nombreCompleto); // Crea una nueva instancia del formulario principal
+            frmPrincipal frmPrincipal = new frmPrincipal(_nombreCompleto, _idUsuario); // Crea una nueva instancia del formulario principal
             frmPrincipal.ShowDialog(); // Muestra el formulario principal como un cuadro de diálogo
             this.Hide(); // Oculta el formulario actual
         }
@@ -41,15 +44,25 @@ namespace Client.UI.Mantenimientos
 
         private void loadCmboSucursales()
         {
-            cmbSucursales.Items.Clear(); // Limpia los elementos actuales en el combo box
-            List<dynamic> sucursales = _sucursalUtils.ObtenerTodos(); // Obtiene todas las sucursales desde el servidor, dynamic es un tipo de dato que puede almacenar cualquier tipo de dato
+            cmbSucursales.Items.Clear();
+            List<dynamic> sucursales = _sucursalUtils.ObtenerTodos();
 
-            if (sucursales != null && sucursales.Count > 0) // Verifica si la lista de sucursales no es null y tiene elementos
+            if (sucursales != null && sucursales.Count > 0)
             {
-                foreach (var sucursal in sucursales) // Itera sobre cada sucursal y la agrega al combo box
+                foreach (var sucursal in sucursales)
                 {
-                    var displayText = $"{sucursal.IdSucursal} - {sucursal.SucursalNombre}";
-                    cmbSucursales.Items.Add(displayText); // Agrega el ID y el nombre de la sucursal al combo box
+                    bool activo = (bool)((JValue)sucursal.Activo).Value;
+
+                    if (activo)
+                    {
+                        var displayText = $"{sucursal.IdSucursal} - {sucursal.SucursalNombre}";
+                        cmbSucursales.Items.Add(displayText);
+                    }
+                }
+
+                if (cmbSucursales.Items.Count == 0)
+                {
+                    MessageBox.Show("No se encontraron sucursales activas.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else

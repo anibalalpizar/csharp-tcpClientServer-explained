@@ -12,14 +12,16 @@ namespace Client.UI.Mantenimientos // Define el espacio de nombres 'Client.UI.Ma
         private CategoriaUtils _categoriaUtils; // Utilidad para manejar datos de categorías
         private PeliculaUtils _peliculaUtils; // Utilidad para manejar datos de películas
         private string _nombreCompleto; // Almacena el nombre completo del usuario
+        private string _idUsuario; // Almacena el ID del usuario
 
         // Constructor que recibe el nombre completo del usuario y inicializa componentes y utilidades
-        public frmPelicula(string nombreCompleto)
+        public frmPelicula(string nombreCompleto, string idUsuario)
         {
             InitializeComponent();
             _categoriaUtils = new CategoriaUtils();
             _peliculaUtils = new PeliculaUtils();
             _nombreCompleto = nombreCompleto;
+            _idUsuario = idUsuario;
         }
 
         // Evento que se ejecuta cuando el formulario se carga
@@ -53,7 +55,7 @@ namespace Client.UI.Mantenimientos // Define el espacio de nombres 'Client.UI.Ma
         // Evento que se ejecuta cuando se hace clic en el botón de la barra de herramientas para ir al formulario principal
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            frmPrincipal frmPrincipal = new frmPrincipal(_nombreCompleto); // Crea una nueva instancia del formulario principal
+            frmPrincipal frmPrincipal = new frmPrincipal(_nombreCompleto, _idUsuario); // Crea una nueva instancia del formulario principal
             frmPrincipal.ShowDialog(); // Muestra el formulario principal como un cuadro de diálogo
             this.Hide(); // Oculta el formulario actual
         }
@@ -88,6 +90,20 @@ namespace Client.UI.Mantenimientos // Define el espacio de nombres 'Client.UI.Ma
             if (string.IsNullOrEmpty(tituloPelicula) || string.IsNullOrEmpty(idioma)) // Verifica si los campos no están vacíos
             {
                 MessageBox.Show("Todos los campos son requeridos.");
+                return;
+            }
+
+            // el titulo de la pelicula no puede ser mayor a 100 caracteres
+            if (tituloPelicula.Length > 100)
+            {
+                MessageBox.Show("El título de la película no puede ser mayor a 100 caracteres.");
+                return;
+            }
+
+            // el idioma de la pelicula no puede ser mayor a 25caracteres
+            if (idioma.Length > 25)
+            {
+                MessageBox.Show("El idioma de la película no puede ser mayor a 25 caracteres.");
                 return;
             }
 

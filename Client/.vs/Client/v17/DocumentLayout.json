@@ -1,92 +1,24 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Client\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{F6A68EDB-8A7A-462D-8EE4-153FFFD65E97}|Client\\Client.csproj|c:\\users\\anibal\\desktop\\csharp-tcpclientserver-explained\\client\\client\\utils\\pelicuaxsucursalutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F6A68EDB-8A7A-462D-8EE4-153FFFD65E97}|Client\\Client.csproj|solutionrelative:client\\utils\\pelicuaxsucursalutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F6A68EDB-8A7A-462D-8EE4-153FFFD65E97}|Client\\Client.csproj|c:\\users\\anibal\\desktop\\csharp-tcpclientserver-explained\\client\\client\\models\\peliculaxsucursal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F6A68EDB-8A7A-462D-8EE4-153FFFD65E97}|Client\\Client.csproj|solutionrelative:client\\models\\peliculaxsucursal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F6A68EDB-8A7A-462D-8EE4-153FFFD65E97}|Client\\Client.csproj|c:\\users\\anibal\\desktop\\csharp-tcpclientserver-explained\\client\\client\\ui\\mantenimientos\\frmpeliculaxsucursal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F6A68EDB-8A7A-462D-8EE4-153FFFD65E97}|Client\\Client.csproj|solutionrelative:client\\ui\\mantenimientos\\frmpeliculaxsucursal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F6A68EDB-8A7A-462D-8EE4-153FFFD65E97}|Client\\Client.csproj|c:\\users\\anibal\\desktop\\csharp-tcpclientserver-explained\\client\\client\\ui\\mantenimientos\\frmpeliculaxsucursal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F6A68EDB-8A7A-462D-8EE4-153FFFD65E97}|Client\\Client.csproj|solutionrelative:client\\ui\\mantenimientos\\frmpeliculaxsucursal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 251,
-          "SelectedChildIndex": 3,
+          "DockedWidth": 311,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PeliculaXSucursal.cs",
-              "DocumentMoniker": "C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Client\\Client\\Models\\PeliculaXSucursal.cs",
-              "RelativeDocumentMoniker": "Client\\Models\\PeliculaXSucursal.cs",
-              "ToolTip": "C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Client\\Client\\Models\\PeliculaXSucursal.cs",
-              "RelativeToolTip": "Client\\Models\\PeliculaXSucursal.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-20T03:26:11.77Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "frmPeliculaxSucursal.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Client\\Client\\UI\\Mantenimientos\\frmPeliculaxSucursal.cs",
-              "RelativeDocumentMoniker": "Client\\UI\\Mantenimientos\\frmPeliculaxSucursal.cs",
-              "ToolTip": "C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Client\\Client\\UI\\Mantenimientos\\frmPeliculaxSucursal.cs [Design]",
-              "RelativeToolTip": "Client\\UI\\Mantenimientos\\frmPeliculaxSucursal.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-20T03:24:49.243Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PelicuaXSucursalUtils.cs",
-              "DocumentMoniker": "C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Client\\Client\\Utils\\PelicuaXSucursalUtils.cs",
-              "RelativeDocumentMoniker": "Client\\Utils\\PelicuaXSucursalUtils.cs",
-              "ToolTip": "C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Client\\Client\\Utils\\PelicuaXSucursalUtils.cs",
-              "RelativeToolTip": "Client\\Utils\\PelicuaXSucursalUtils.cs",
-              "ViewState": "AQIAAFYAAAAAAAAAAAAQwHgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-20T02:50:35.012Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "frmPeliculaxSucursal.cs",
-              "DocumentMoniker": "C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Client\\Client\\UI\\Mantenimientos\\frmPeliculaxSucursal.cs",
-              "RelativeDocumentMoniker": "Client\\UI\\Mantenimientos\\frmPeliculaxSucursal.cs",
-              "ToolTip": "C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Client\\Client\\UI\\Mantenimientos\\frmPeliculaxSucursal.cs",
-              "RelativeToolTip": "Client\\UI\\Mantenimientos\\frmPeliculaxSucursal.cs",
-              "ViewState": "AQIAAMQAAAAAAAAAAAAswMwAAABDAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-20T01:22:12.875Z",
-              "EditorCaption": ""
             }
           ]
         },
         {
-          "DockedWidth": 187,
+          "DockedWidth": 311,
           "SelectedChildIndex": -1,
           "Children": [
             {
