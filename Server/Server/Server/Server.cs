@@ -31,6 +31,7 @@ namespace Server.Server // Define el espacio de nombres 'Server.Server'.
         public void StartServer()
         {
             IsRunning = true;
+            
             IPAddress ipAddress = IPAddress.Parse("127.0.0.1"); // Dirección IP en la que se ejecuta el servidor.
             int port = 15500; // Puerto en el que se ejecuta el servidor.
 

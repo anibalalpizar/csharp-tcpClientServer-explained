@@ -1,7 +1,28 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Client\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F6A68EDB-8A7A-462D-8EE4-153FFFD65E97}|Client\\Client.csproj|c:\\users\\anibal\\desktop\\csharp-tcpclientserver-explained\\client\\client\\ui\\mantenimientos\\frmpelicula.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6A68EDB-8A7A-462D-8EE4-153FFFD65E97}|Client\\Client.csproj|solutionrelative:client\\ui\\mantenimientos\\frmpelicula.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6A68EDB-8A7A-462D-8EE4-153FFFD65E97}|Client\\Client.csproj|c:\\users\\anibal\\desktop\\csharp-tcpclientserver-explained\\client\\client\\ui\\mantenimientos\\frmcategoriapelicula.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6A68EDB-8A7A-462D-8EE4-153FFFD65E97}|Client\\Client.csproj|solutionrelative:client\\ui\\mantenimientos\\frmcategoriapelicula.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6A68EDB-8A7A-462D-8EE4-153FFFD65E97}|Client\\Client.csproj|C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Client\\client\\ui\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6A68EDB-8A7A-462D-8EE4-153FFFD65E97}|Client\\Client.csproj|solutionrelative:client\\ui\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6A68EDB-8A7A-462D-8EE4-153FFFD65E97}|Client\\Client.csproj|C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Client\\client\\ui\\proceso\\frmprestamo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6A68EDB-8A7A-462D-8EE4-153FFFD65E97}|Client\\Client.csproj|solutionrelative:client\\ui\\proceso\\frmprestamo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6A68EDB-8A7A-462D-8EE4-153FFFD65E97}|Client\\Client.csproj|C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Client\\client\\ui\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F6A68EDB-8A7A-462D-8EE4-153FFFD65E97}|Client\\Client.csproj|solutionrelative:client\\ui\\frmprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,17 +30,65 @@
       "DocumentGroups": [
         {
           "DockedWidth": 311,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "frmPelicula.cs",
+              "DocumentMoniker": "C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Client\\Client\\UI\\Mantenimientos\\frmPelicula.cs",
+              "RelativeDocumentMoniker": "Client\\UI\\Mantenimientos\\frmPelicula.cs",
+              "ToolTip": "C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Client\\Client\\UI\\Mantenimientos\\frmPelicula.cs",
+              "RelativeToolTip": "Client\\UI\\Mantenimientos\\frmPelicula.cs",
+              "ViewState": "AQIAACYAAAAAAAAAAAAAAD4AAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-21T01:13:34.171Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmPrestamo.cs",
+              "DocumentMoniker": "C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Client\\Client\\UI\\Proceso\\frmPrestamo.cs",
+              "RelativeDocumentMoniker": "Client\\UI\\Proceso\\frmPrestamo.cs",
+              "ToolTip": "C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Client\\Client\\UI\\Proceso\\frmPrestamo.cs",
+              "RelativeToolTip": "Client\\UI\\Proceso\\frmPrestamo.cs",
+              "ViewState": "AQIAAFsAAAAAAAAAAAAAAHQAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-21T01:11:58.949Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmPrincipal.cs",
+              "DocumentMoniker": "C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Client\\Client\\UI\\frmPrincipal.cs",
+              "RelativeDocumentMoniker": "Client\\UI\\frmPrincipal.cs",
+              "ToolTip": "C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Client\\Client\\UI\\frmPrincipal.cs",
+              "RelativeToolTip": "Client\\UI\\frmPrincipal.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-21T01:11:56.909Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frmPrincipal.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Client\\Client\\UI\\frmPrincipal.cs",
+              "RelativeDocumentMoniker": "Client\\UI\\frmPrincipal.cs",
+              "ToolTip": "C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Client\\Client\\UI\\frmPrincipal.cs [Design]",
+              "RelativeToolTip": "Client\\UI\\frmPrincipal.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-21T01:08:47.445Z"
             }
           ]
         },
         {
           "DockedWidth": 311,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -28,6 +97,19 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmCategoriaPelicula.cs",
+              "DocumentMoniker": "C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Client\\Client\\UI\\Mantenimientos\\frmCategoriaPelicula.cs",
+              "RelativeDocumentMoniker": "Client\\UI\\Mantenimientos\\frmCategoriaPelicula.cs",
+              "ToolTip": "C:\\Users\\anibal\\Desktop\\csharp-tcpClientServer-explained\\Client\\Client\\UI\\Mantenimientos\\frmCategoriaPelicula.cs",
+              "RelativeToolTip": "Client\\UI\\Mantenimientos\\frmCategoriaPelicula.cs",
+              "ViewState": "AQIAAFkAAAAAAAAAAAAAAIQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-21T01:02:15.774Z",
+              "EditorCaption": ""
             }
           ]
         }

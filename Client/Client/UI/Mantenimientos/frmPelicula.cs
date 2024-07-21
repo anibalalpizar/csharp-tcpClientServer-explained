@@ -13,15 +13,18 @@ namespace Client.UI.Mantenimientos // Define el espacio de nombres 'Client.UI.Ma
         private PeliculaUtils _peliculaUtils; // Utilidad para manejar datos de películas
         private string _nombreCompleto; // Almacena el nombre completo del usuario
         private string _idUsuario; // Almacena el ID del usuario
+        private frmPrincipal _frmPrincipal;
+
 
         // Constructor que recibe el nombre completo del usuario y inicializa componentes y utilidades
-        public frmPelicula(string nombreCompleto, string idUsuario)
+        public frmPelicula(frmPrincipal frmPrincipal, string nombreCompleto, string idUsuario)
         {
             InitializeComponent();
             _categoriaUtils = new CategoriaUtils();
             _peliculaUtils = new PeliculaUtils();
             _nombreCompleto = nombreCompleto;
             _idUsuario = idUsuario;
+            _frmPrincipal = frmPrincipal;
         }
 
         // Evento que se ejecuta cuando el formulario se carga
@@ -55,9 +58,9 @@ namespace Client.UI.Mantenimientos // Define el espacio de nombres 'Client.UI.Ma
         // Evento que se ejecuta cuando se hace clic en el botón de la barra de herramientas para ir al formulario principal
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            frmPrincipal frmPrincipal = new frmPrincipal(_nombreCompleto, _idUsuario); // Crea una nueva instancia del formulario principal
-            frmPrincipal.ShowDialog(); // Muestra el formulario principal como un cuadro de diálogo
-            this.Hide(); // Oculta el formulario actual
+            // Muestra la instancia original del formulario principal
+            _frmPrincipal.Show();
+            this.Close(); // Cierra el formulario actual
         }
 
         // Evento que se ejecuta cuando se hace clic en el botón 'Agregar'
@@ -143,7 +146,9 @@ namespace Client.UI.Mantenimientos // Define el espacio de nombres 'Client.UI.Ma
 
         private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-
+            // Muestra la instancia original del formulario principal
+            _frmPrincipal.Show();
+            this.Close(); // Cierra el formulario actual
         }
     }
 }

@@ -11,13 +11,16 @@ namespace Client.UI.Mantenimientos
         private ClienteUtils _clienteUtils; // Instancia de la utilidad de clientes
         private string _nombreCompleto; // Almacena el nombre completo del usuario
         private string _idUsuario;
+        private frmPrincipal _frmPrincipal;
 
-        public frmCliente(string nombreCompleto, string idUsuario)
+
+        public frmCliente(frmPrincipal frmPrincipal,string nombreCompleto, string idUsuario)
         {
             InitializeComponent();
             _clienteUtils = new ClienteUtils(); // Inicializa la utilidad de clientes
             _nombreCompleto = nombreCompleto; // Establece el nombre completo del usuariokd
             _idUsuario = idUsuario;
+            _frmPrincipal = frmPrincipal; // Asigna la instancia del formulario principal
         }
 
         // Evento que se dispara al hacer clic en el botón 'Registrar'
@@ -137,9 +140,9 @@ namespace Client.UI.Mantenimientos
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            frmPrincipal frmPrincipal = new frmPrincipal(_nombreCompleto, _idUsuario); // Crea una nueva instancia del formulario principal
-            frmPrincipal.ShowDialog(); // Muestra el formulario principal como un cuadro de diálogo
-            this.Hide(); // Oculta el formulario actual
+            // Muestra la instancia original del formulario principal
+            _frmPrincipal.Show();
+            this.Close(); // Cierra el formulario actual
         }
     }
 }

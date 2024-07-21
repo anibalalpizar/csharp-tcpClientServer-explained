@@ -19,17 +19,18 @@ namespace Client.UI.Mantenimientos
         private CategoriaUtils _categoriaUtils;
         private string _nombreCompleto;
         private string _idUsuario;
+        private frmPrincipal _frmPrincipal;
+
 
 
         // Constructor de la clase 'frmCategoriaPelicula'
-        public frmCategoriaPelicula(string nombreCompleto, string idUsuario)
+        public frmCategoriaPelicula(frmPrincipal frmPrincipal, string nombreCompleto, string idUsuario)
         {
-            // Inicializamos los componentes del formulario
             InitializeComponent();
-            // Instanciamos la clase 'CategoriaUtils' y asignamos a '_categoriaUtils'
             _categoriaUtils = new CategoriaUtils();
             _nombreCompleto = nombreCompleto;
             _idUsuario = idUsuario;
+            _frmPrincipal = frmPrincipal; // Asigna la instancia del formulario principal
         }
 
 
@@ -123,9 +124,9 @@ namespace Client.UI.Mantenimientos
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            frmPrincipal frmPrincipal = new frmPrincipal(_nombreCompleto, _idUsuario);
-            frmPrincipal.ShowDialog();
-            this.Hide();
+            // Muestra la instancia original del formulario principal
+            _frmPrincipal.Show();
+            this.Close(); // Cierra el formulario actual
         }
     }
 }

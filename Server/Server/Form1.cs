@@ -63,6 +63,10 @@ namespace Server              // Define un espacio de nombres para organizar las
             try
             {
                 server.CheckConnectedClientsBeforeStopping(); // Verifica si hay clientes conectados antes de detener el servidor.
+                MessageBox.Show("Servidor detenido."); // Muestra un mensaje de confirmación de que el servidor se ha detenido.
+                btnEjecutar.Enabled = true; // Activa el botón de iniciar.
+                btnDetener.Enabled = false; // Desactiva el botón de detener.
+                UpdateServerStatus(false); // Actualiza el estado del servidor a "Apagado".
             }
             catch (InvalidOperationException ex) // Captura excepciones si hay clientes conectados.
             {
@@ -73,18 +77,15 @@ namespace Server              // Define un espacio de nombres para organizar las
                 {
                     server.CloseAllClientConnections(); // Cierra todas las conexiones de cliente.
                     server.StopServer(); // Detiene el servidor.
+                    MessageBox.Show("Servidor detenido."); // Muestra un mensaje de confirmación de que el servidor se ha detenido.
+                    btnEjecutar.Enabled = true; // Activa el botón de iniciar.
+                    btnDetener.Enabled = false; // Desactiva el botón de detener.
+                    UpdateServerStatus(false); // Actualiza el estado del servidor a "Apagado".
                 }
                 else // Si el usuario selecciona "No".
                 {
                     MessageBox.Show("Servidor no detenido."); // Muestra un mensaje informando que el servidor no se detuvo.
                 }
-            }
-            finally
-            {
-                MessageBox.Show("Servidor detenido."); // Muestra un mensaje de confirmación de que el servidor se ha detenido.
-                btnEjecutar.Enabled = true; // Activa el botón de iniciar.
-                btnDetener.Enabled = false; // Desactiva el botón de detener.
-                UpdateServerStatus(false); // Actualiza el estado del servidor a "Apagado".
             }
         }
 

@@ -16,21 +16,24 @@ namespace Client.UI.Mantenimientos
         private string _idUsuario; // ID del usuario
         private EncargadoUtils _encargadoUtils; // Utilidades de encargado
         private SucursalUtils _sucursalUtils; // Utilidades de sucursal
+        private frmPrincipal _frmPrincipal;
 
-        public frmSucursal(string nombreCompleto, string idUsuario) // Constructor del formulario
+
+        public frmSucursal(frmPrincipal frmPrincipal, string nombreCompleto, string idUsuario) // Constructor del formulario
         {
             InitializeComponent();
             _nombreCompleto = nombreCompleto; // Asigna el nombre completo del usuario
             _idUsuario = idUsuario; // Asigna el ID del usuario
             _encargadoUtils = new EncargadoUtils(); // Inicializa las utilidades de encargado
             _sucursalUtils = new SucursalUtils(); // Inicializa las utilidades de sucursal
+            _frmPrincipal = frmPrincipal; // Asigna la instancia del formulario principal
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            frmPrincipal frmPrincipal = new frmPrincipal(_nombreCompleto, _idUsuario); // Crea una instancia del formulario principal
-            frmPrincipal.ShowDialog();
-            this.Hide();
+            // Muestra la instancia original del formulario principal
+            _frmPrincipal.Show();
+            this.Close(); // Cierra el formulario actual
         }
 
         private void frmSucursal_Load(object sender, EventArgs e)

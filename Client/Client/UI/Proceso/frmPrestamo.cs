@@ -13,14 +13,16 @@ namespace Client.UI.Proceso
         private string _idUsuario;
         private SucursalUtils _sucursalUtils;
         private PeliculaUtils _peliculaUtils;
+        private frmPrincipal _frmPrincipal;
 
-        public frmPrestamo(string nombreCompleto, string idUsuario)
+        public frmPrestamo(frmPrincipal frmPrincipal,string nombreCompleto, string idUsuario)
         {
             InitializeComponent();
             _nombreCompleto = nombreCompleto;
             _idUsuario = idUsuario;
             _sucursalUtils = new SucursalUtils();
             _peliculaUtils = new PeliculaUtils();
+            _frmPrincipal = frmPrincipal;
         }
 
         private void frmPrestamo_Load(object sender, EventArgs e)
@@ -110,9 +112,9 @@ namespace Client.UI.Proceso
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            frmPrincipal frmPrincipal = new frmPrincipal(_nombreCompleto, _idUsuario);
-            frmPrincipal.ShowDialog();
-            this.Hide();
+            // Muestra la instancia original del formulario principal
+            _frmPrincipal.Show();
+            this.Close(); // Cierra el formulario actual
         }
 
         private void cmbSucursales_SelectedIndexChanged(object sender, EventArgs e)

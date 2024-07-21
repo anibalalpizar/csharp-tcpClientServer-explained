@@ -15,8 +15,10 @@ namespace Client.UI.Mantenimientos
         private SucursalUtils _sucursalUtils;
         private PeliculaUtils _peliculaUtils;
         private PelicuaXSucursalUtils _pelicuaXSucursalUtils;
+        private frmPrincipal _frmPrincipal;
 
-        public frmPeliculaxSucursal(string nombreCompleto, string idUsuario)
+
+        public frmPeliculaxSucursal(frmPrincipal frmPrincipal,string nombreCompleto, string idUsuario)
         {
             InitializeComponent();
             InitializeDataGridView();
@@ -25,13 +27,14 @@ namespace Client.UI.Mantenimientos
             _sucursalUtils = new SucursalUtils();
             _peliculaUtils = new PeliculaUtils();
             _pelicuaXSucursalUtils = new PelicuaXSucursalUtils();
+            _frmPrincipal = frmPrincipal;
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            frmPrincipal frmPrincipal = new frmPrincipal(_nombreCompleto, _idUsuario); // Crea una nueva instancia del formulario principal
-            frmPrincipal.ShowDialog(); // Muestra el formulario principal como un cuadro de diálogo
-            this.Hide(); // Oculta el formulario actual
+            // Muestra la instancia original del formulario principal
+            _frmPrincipal.Show();
+            this.Close(); // Cierra el formulario actual
         }
 
         private void frmPeliculaxSucursal_Load(object sender, EventArgs e)
